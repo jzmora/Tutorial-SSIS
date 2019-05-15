@@ -11,8 +11,8 @@
   DTS:LocaleID="3082"
   DTS:ObjectName="Lesson 1"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{2D1F1A3E-F5BD-43E6-9CB9-79F463B7AD79}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{F323F311-ED31-4E8D-A748-4CFD17BE2478}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -725,21 +725,29 @@ where [refTable].[FullDateAlternateKey] = ?</property>
     design-time-name="Package\Extract Sample Currency Data">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        <NodeLayout
+          Size="178.4,41.6"
+          Id="Package\Extract Sample Currency Data\Lookup Currency Key"
+          TopLeft="35.0000005960464,149.06666875727" />
+        <NodeLayout
+          Size="158.4,41.6"
+          Id="Package\Extract Sample Currency Data\Lookup Date Key"
+          TopLeft="35.0000005960464,233.286277781556" />
         <NodeLayout
           Size="219.2,41.6"
           Id="Package\Extract Sample Currency Data\Extract Sample Currency Data"
           TopLeft="35.0000005960464,64.847059732985" />
         <NodeLayout
-          Size="178.4,41.6"
-          Id="Package\Extract Sample Currency Data\Lookup Currency Key"
-          TopLeft="35.0000005960464,149.06666875727" />
+          Size="219.2,41.6"
+          Id="Package\Extract Sample Currency Data\Sample OLE DB Destination"
+          TopLeft="35.0000005960464,317.505886805841" />
         <EdgeLayout
           Id="Package\Extract Sample Currency Data.Paths[Salida de origen de archivo plano]"
           TopLeft="144.600000596046,106.447059732985">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="-20.4,42.6196090242854"
               Start="0,0"
               End="-20.4,35.1196090242854">
@@ -768,20 +776,48 @@ where [refTable].[FullDateAlternateKey] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="158.4,41.6"
-          Id="Package\Extract Sample Currency Data\Lookup Date Key"
-          TopLeft="35.0000005960464,233.286277781556" />
-        <NodeLayout
-          Size="219.2,41.6"
-          Id="Package\Extract Sample Currency Data\Sample OLE DB Destination"
-          TopLeft="35.0000005960464,317.505886805841" />
+        <EdgeLayout
+          Id="Package\Extract Sample Currency Data.Paths[Salida de entradas coincidentes de búsqueda1]"
+          TopLeft="124.200000596046,190.66666875727">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-10,42.6196090242854"
+              Start="0,0"
+              End="-10,35.1196090242854">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.3098045121427" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.3098045121427"
+                    Point2="0,21.3098045121427"
+                    Point3="-4,21.3098045121427" />
+                  <mssgle:LineSegment
+                    End="-6,21.3098045121427" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6,21.3098045121427"
+                    Point2="-10,21.3098045121427"
+                    Point3="-10,25.3098045121427" />
+                  <mssgle:LineSegment
+                    End="-10,35.1196090242854" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-104.8190234375,26.3098045121427,199.638046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Extract Sample Currency Data.Paths[Salida de entradas coincidentes de búsqueda]"
           TopLeft="114.200000596046,274.886277781556">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="30.4,42.6196090242855"
               Start="0,0"
               End="30.4,35.1196090242855">
@@ -813,7 +849,7 @@ where [refTable].[FullDateAlternateKey] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
-          Text="The data flow extracts data from a file, &#xD;&#xA;looks up values in the CurrencyKey column &#xD;&#xA;in the DimCurrency table and the DateKey column in the DimDate table, &#xD;&#xA;and writes the data to the NewFactCurrencyRate table."
+          Text="The data flow extracts data from a file, &#xA;looks up values in the CurrencyKey column &#xA;in the DimCurrency table and the DateKey column in the DimDate table, &#xA;and writes the data to the NewFactCurrencyRate table."
           ParentId="Package\Extract Sample Currency Data"
           Size="383.2,76.8"
           Id="f4293ef8-29e8-4906-b54e-e4a350525c01"
@@ -827,42 +863,6 @@ where [refTable].[FullDateAlternateKey] = ?</property>
             </mssge:FontInfo>
           </AnnotationLayout.FontInfo>
         </AnnotationLayout>
-        <EdgeLayout
-          Id="Package\Extract Sample Currency Data.Paths[Salida de entradas coincidentes de búsqueda1]"
-          TopLeft="124.200000596046,190.66666875727">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="-10,42.6196090242854"
-              Start="0,0"
-              End="-10,35.1196090242854">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.3098045121427" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.3098045121427"
-                    Point2="0,21.3098045121427"
-                    Point3="-4,21.3098045121427" />
-                  <mssgle:LineSegment
-                    End="-6,21.3098045121427" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-6,21.3098045121427"
-                    Point2="-10,21.3098045121427"
-                    Point3="-10,25.3098045121427" />
-                  <mssgle:LineSegment
-                    End="-10,35.1196090242854" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-104.8190234375,26.3098045121427,199.638046875,12.1953125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -872,7 +872,7 @@ where [refTable].[FullDateAlternateKey] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -882,7 +882,7 @@ where [refTable].[FullDateAlternateKey] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -905,7 +905,7 @@ where [refTable].[FullDateAlternateKey] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
